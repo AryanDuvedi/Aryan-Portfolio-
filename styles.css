@@ -1,0 +1,567 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Text color for better contrast */
+    background: #003366; /* Dark Royal Blue */
+}
+
+/* Header */
+header {
+    background: #002244; /* Darker Royal Blue */
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center; /* Center align navbar items */
+    gap: 2rem; /* Space between navbar items */
+    list-style: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Removes default bullets */
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+    display: block;
+}
+
+nav a:hover {
+    color: #003366; /* Dark Royal Blue */
+    background-color: #ffcc00; /* Gold */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #002244, #003366); /* Darker Royal Gradient */
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeIn 2s ease-in;
+}
+
+.hero .highlight {
+    color: #ffcc00; /* Gold */
+    font-size: 2rem;
+}
+
+/* Animated Divider */
+.animated-divider {
+    height: 5px;
+    background: #ffcc00; /* Gold */
+    animation: pulse 2s infinite;
+}
+/* My Work Section */
+.work {
+    padding: 2rem;
+    background: #003366; /* Dark Royal Blue */
+}
+
+.work h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffcc00; /* Gold */
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.work-item {
+    background: #002244; /* Darker Royal Blue */
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-item img {
+    max-width: 150px; /* Limit the image size */
+    width: 100%; /* Ensure responsiveness */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Optional: round the corners of the image */
+    object-fit: cover; /* Ensure the image fits within the container */
+    margin-bottom: 1rem; /* Add spacing between the image and text */
+}
+
+.work-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay for hover effect */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 0;
+}
+
+.work-item:hover {
+    transform: scale(1.05) rotate(2deg); /* Slight scale and rotation effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    background-color: #004080; /* Slightly lighter Royal Blue */
+}
+
+.work-item:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.work-item h3, .work-item p {
+    position: relative;
+    z-index: 1; /* Ensure text is above the overlay */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Me Section */
+.about-me {
+    padding: 3rem;
+    background: linear-gradient(135deg, #003366 0%, #002244 100%);
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-me-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffcc00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.about-me p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem; /* Increase bottom margin for spacing */
+    padding: 0 1rem; /* Add padding for better readability */
+}
+
+.about-me p:last-child {
+    font-weight: bold; /* Emphasize the final connection call */
+}
+
+
+
+/* My Services Section */
+.services {
+    padding: 2rem;
+    background: #003366; /* Dark Royal Blue */
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffcc00; /* Gold */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.service-box {
+    background: #002244; /* Darker Royal Blue */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-box:hover {
+    background: #003366; /* Dark Royal Blue */
+    transform: scale(1.05) rotate(1deg); /* Slightly increase size and rotate */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Deepen the shadow */
+}
+
+/* Add a floating effect on hover */
+.service-box:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 204, 0, 0.1); /* Faint gold glow */
+    transform: scale(1.2); /* Grow slightly */
+    transition: transform 0.4s ease;
+}
+
+.expand-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffcc00; /* Gold */
+    color: #003366; /* Dark Royal Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.expand-btn:hover {
+    background: #e6b800; /* Slightly darker Gold */
+    color: #fff;
+}
+
+.service-details {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 10px;
+    color: #fff; /* White text inside details */
+}
+
+.service-box.active .service-details {
+    display: block;
+    max-height: 500px; /* Adjust as needed */
+    opacity: 1;
+}
+
+/* New subtle pulse effect on hover */
+.service-box:hover {
+    animation: pulse 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1); 
+    }
+    to {
+        transform: scale(1.05); /* Slight pulse */
+    }
+}
+
+
+/* About Me Section */
+.about-me {
+    padding: 2rem;
+    background: #003366; /* Dark Royal Blue */
+    text-align: center; /* Center text alignment */
+}
+
+.about-me img {
+    border-radius: 50%;
+    max-width: 200px;
+    transition: transform 0.3s;
+    display: block; /* Center align image */
+    margin: 0 auto; /* Center align image */
+}
+
+.about-me img:hover {
+    transform: scale(1.1);
+}
+
+/* What People Say Section */
+.what-people-say {
+    padding: 2rem;
+    background: #003366; /* Dark Royal Blue */
+}
+
+.what-people-say h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffcc00; /* Gold */
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+}
+
+.testimonial-box {
+    background: #002244; /* Darker Royal Blue */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards, slideIn 0.8s forwards; /* Fade and slide in animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
+    position: relative; /* For border highlight */
+}
+
+.testimonial-box img {
+    width: 100%; /* Make the image responsive to the box's width */
+    max-width: 75px; /* Set a smaller maximum width (half of the previous size) */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Optional: Make the image circular */
+    margin-bottom: 1rem; /* Add spacing below the image */
+}
+
+/* Animation for fading in and moving up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in effect from the left */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Hover effect for a sophisticated interaction */
+.testimonial-box:hover {
+    transform: scale(1.05) rotateY(3deg); /* Scale up and slight 3D rotation */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deepen the shadow */
+    border: 2px solid #ffcc00; /* Gold border on hover */
+    background: linear-gradient(145deg, #002244, #003366); /* Gradient background on hover */
+    animation: none; /* Stop animations on hover */
+    /* Adding subtle hover animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Optional: Additional hover effect */
+.testimonial-box:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 204, 0, 0.2); /* Faint gold overlay */
+    border-radius: 8px;
+    transform: scale(1.1); /* Slightly grow */
+    transition: transform 0.3s ease-in-out;
+    z-index: -1; /* Place it behind the text */
+}
+
+/* Optional: Glowing text effect on hover */
+.testimonial-box:hover .testimonial-text {
+    animation: textGlow 1s infinite; /* Apply a glowing text animation */
+}
+
+/* Glowing text effect */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00, 0 0 25px #ffcc00;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+    }
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    background: #003366; /* Dark Royal Blue */
+    text-align: center; /* Center align text */
+}
+
+/* Contact Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Icons */
+.contact-icons img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Form Styles */
+form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #ffcc00; /* Gold */
+    color: #003366; /* Dark Royal Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e6b800; /* Darker Gold */
+}
+
+
+/* Footer */
+footer {
+    background: #002244; /* Darker Royal Blue */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .work-grid,
+    .services-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 1rem; /* Adjust spacing between items */
+    }
+
+    .about-me h2 {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+
+    .about-me p {
+        font-size: 1rem; /* Adjust font size for mobile */
+        padding: 0 0.5rem; /* Reduce padding for mobile */
+    }
+
+    input, textarea {
+        width: 90%; /* Increase width for mobile */
+    }
+
+    button {
+        width: 90%; /* Increase button width for mobile */
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+        align-items: center;
+    }
+
+    .work-grid, .services-grid, .testimonial-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .work-item, .service-box, .testimonial-box {
+        margin: 10px; /* Add spacing */
+    }
+
+    .btn {
+        padding: 10px 15px; /* Adjust button size */
+        font-size: 16px; /* Increase button font size */
+    }
+}
